@@ -54,11 +54,26 @@ namespace CxxToolBox
 		std::chrono::time_point<std::chrono::steady_clock> end;
 	};
 
-	template <class Return, class ... Parameters>
+	template <class Return>
 	class AsyncWorker
 	{
 	public:
-		void Run(std::function<Return(Parameters...)> f, Parameters && ... parameters)
+		AsyncWorker() : function(nullptr), thread(nullptr)
+		{
+
+		}
+		~AsyncWorker()
+		{
+			if (thread != nullptr)
+			{
+				if (thread->joinable())
+					thread->join();
+				delete thread;
+			}
+		}
+
+		template<class Functor, class  ... Parameters>
+		void Run(Functor && f, Parameters && ... parameters)
 		{
 			future = promise.get_future();
 			function = std::bind(f, parameters...);
@@ -75,7 +90,7 @@ namespace CxxToolBox
 	protected:
 		std::promise<Return> promise;
 		std::future<Return> future;
-		std::function<Return()> function = nullptr;
+		std::function<Return()> function;
 		std::thread * thread;
 
 		void worker()
@@ -83,4 +98,11 @@ namespace CxxToolBox
 			promise.set_value(function());
 		}
 	};
+
+	template <>
+	void AsyncWorker<void>::worker()
+	{
+		function();
+		promise.set_value();
+	}
 }
