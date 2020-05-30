@@ -19,10 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AsyncWorker.cpp" />
+    <ClCompile Include="concurrent_distributed_unordered_map.cpp" />
     <ClCompile Include="CxxToolBox.cpp" />
+    <ClCompile Include="StopWatch.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AsyncWorker.h" />
+    <ClInclude Include="concurrent_distributed_unordered_map.h" />
     <ClInclude Include="CxxToolBox.h" />
+    <ClInclude Include="StopWatch.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

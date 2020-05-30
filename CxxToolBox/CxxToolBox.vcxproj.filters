@@ -18,9 +18,27 @@
     <ClCompile Include="CxxToolBox.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="StopWatch.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AsyncWorker.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrent_distributed_unordered_map.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CxxToolBox.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="StopWatch.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AsyncWorker.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrent_distributed_unordered_map.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
