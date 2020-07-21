@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CxxToolBox.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="StopWatch.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -29,9 +26,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CxxToolBox.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="StopWatch.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>

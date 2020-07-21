@@ -46,14 +46,15 @@ namespace CxxToolBox
 
 		void worker()
 		{
-			promise.set_value(function());
+			if constexpr (std::is_void(Return))
+			{
+				function();
+				promise.set_value();
+			}
+			else
+			{
+				promise.set_value(function());
+			}
 		}
 	};
-
-	template <>
-	void AsyncWorker<void>::worker()
-	{
-		function();
-		promise.set_value();
-	}
 }

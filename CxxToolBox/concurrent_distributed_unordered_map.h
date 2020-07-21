@@ -4,6 +4,7 @@
 #include <shared_mutex>
 #include <unordered_map>
 #include <functional>
+#include <atomic>
 
 namespace CxxToolBox
 {
